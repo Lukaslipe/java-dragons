@@ -1,5 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+
+        Heroi lucas = new Heroi("Lucas", 100, 1, 10, 20, "Espada");
+
+        System.out.println(lucas.getNome());
     }
 }

@@ -11,6 +11,8 @@ out/
 .settings
 .springBeans
 .sts4-cache
+javaDragons.iml
+misc.xml
 .idea/
 bin/
 !**/src/main/**/bin/
