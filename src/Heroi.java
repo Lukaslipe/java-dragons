@@ -28,8 +28,8 @@ public class Heroi extends Personagem{
         this.nivel += 1;
     }
 
-    public void receberDano(int dano) {
-        vida -= dano;
+    public void receberDano(int dano_recebido) {
+        vida -= dano_recebido;
         if (vida < 0) vida = 0;
     }
 
