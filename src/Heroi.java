@@ -36,4 +36,8 @@ public class Heroi extends Personagem{
     public void receberCura(int cura) {
         vida += cura;
     }
+
+    public void receberForca(int forca) {
+        dano += forca;
+    }
 }
