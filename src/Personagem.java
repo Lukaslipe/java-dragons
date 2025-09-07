@@ -21,5 +21,4 @@ public abstract class Personagem {
     public int getVida() {
         return vida;
     }
-
 }

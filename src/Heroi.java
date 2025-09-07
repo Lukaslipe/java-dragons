@@ -3,17 +3,24 @@ public class Heroi extends Personagem{
     protected int xp;
     protected int dano;
     protected String tipoAtaque;
+    private Inventario inventario;
+
 
     public Heroi(String nome, int vida, int nivel, int xp, int dano, String tipoAtaque) {
         super(nome, vida, nivel);
         this.xp = xp;
         this.dano = dano;
         this.tipoAtaque = tipoAtaque;
+        this.inventario = new Inventario();
     }
 
     @Override
     public boolean estaVivo() {
         return vida > 0;
+    }
+
+    public Inventario getInventario() {
+        return inventario;
     }
 
     public void atacar(Inimigo inimigo) {
