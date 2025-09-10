@@ -1,10 +1,12 @@
 public class Main {
     public static void main(String[] args) {
 
-    Heroi lucas = new Heroi("Lucas", 100, 1, 10, 20, "Espada");
+        try {
+            Heroi heroi = new Heroi("Lucas", 100, 1, 10, 0, "Espada");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro ao criar herói: " + e.getMessage());
+        }
 
-    Historia historia = new Historia();
 
-    historia.iniciar(lucas);
     }
 }

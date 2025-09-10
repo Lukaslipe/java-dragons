@@ -8,6 +8,20 @@ public class Heroi extends Personagem{
 
     public Heroi(String nome, int vida, int nivel, int xp, int dano, String tipoAtaque) {
         super(nome, vida, nivel);
+
+        if (vida < 0) {
+            throw new IllegalArgumentException("A vida do herói não pode ser negativa!");
+        }
+        if (xp < 0) {
+            throw new IllegalArgumentException("O XP do herói não pode ser negativo!");
+        }
+        if (dano <= 0) {
+            throw new IllegalArgumentException("O dano do herói deve ser maior que zero!");
+        }
+        if (tipoAtaque == null || tipoAtaque.isBlank()) {
+            throw new IllegalArgumentException("O tipo de ataque não pode ser vazio!");
+        }
+
         this.xp = xp;
         this.dano = dano;
         this.tipoAtaque = tipoAtaque;
