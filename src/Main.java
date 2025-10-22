@@ -1,25 +1,29 @@
+import Controller.HistoriaController;
+import Model.Heroi;
+import View.HistoriaView;
+
 public class Main {
     public static void main(String[] args) {
-        Heroi heroi = null;
-        Historia historia = new Historia();
-        try {
-            heroi = new Heroi("Lucas", 100, 1, 10, 0, "Espada");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Erro ao criar herói: " + e.getMessage());
-        }
 
+        // --- MODELOS ---
+        Heroi heroi = null;
+
+        // --- VIEW & CONTROLLER ---
+        HistoriaView historiaView = new HistoriaView();
+        HistoriaController historiaController = new HistoriaController(historiaView);
+
+        // --- CRIAÇÃO DO HERÓI ---
         try {
             heroi = new Heroi("Lucas", 100, 1, 10, 10, "Espada");
         } catch (IllegalArgumentException e) {
             System.out.println("Erro ao criar herói: " + e.getMessage());
         }
 
-        Inimigo inimigo = new Inimigo("Dragão", 100, 1, 10,  "Dragão");
-
+        // --- INÍCIO DO JOGO ---
         if (heroi != null) {
-            historia.iniciar(heroi);
+            historiaController.iniciar(heroi); // o controller cuida da lógica da história
         } else {
-            System.out.println("Não foi possível iniciar a batalha, herói inválido!");
+            System.out.println("❌ Não foi possível iniciar o jogo: herói inválido!");
         }
     }
 }

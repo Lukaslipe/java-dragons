@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,9 +18,7 @@ public class Inventario {
         }
     }
 
-    public void listarItens() {
-        for (int i = 0; i < itens.size(); i++) {
-            System.out.println(i + " - " + itens.get(i).getClass().getSimpleName());
-        }
+    public List<Usavel> getItens() {
+        return itens;
     }
 }

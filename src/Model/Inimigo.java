@@ -1,4 +1,6 @@
-public class Inimigo extends Personagem{
+package Model;
+
+public class Inimigo extends Personagem {
 
     protected int dano;
     protected String tipo;

@@ -1,3 +1,5 @@
+package Model;
+
 public class Curandeiro extends Personagem {
 
     protected int cura;

@@ -1,3 +1,5 @@
+package Model;
+
 public class PocaoDeForca extends Item implements Usavel {
 
     private int forca;
