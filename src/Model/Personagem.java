@@ -1,3 +1,5 @@
+package Model;
+
 public abstract class Personagem {
     protected String nome;
     protected int vida;

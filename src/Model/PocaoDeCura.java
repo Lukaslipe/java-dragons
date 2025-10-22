@@ -1,3 +1,5 @@
+package Model;
+
 public class PocaoDeCura extends Item implements Usavel {
 
     private int cura;
