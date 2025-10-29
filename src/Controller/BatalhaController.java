@@ -28,7 +28,7 @@ public class BatalhaController {
             }
 
             if (batalha.getInimigo().getVida() <= 0) {
-                view.mostrarMensagem("✅ Você derrotou " + batalha.getInimigo().getNome() + "!");
+                view.mostrarMensagem("Você derrotou " + batalha.getInimigo().getNome() + "!");
                 return "vitoria";
             }
 
