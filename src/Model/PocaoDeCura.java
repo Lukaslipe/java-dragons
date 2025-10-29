@@ -12,6 +12,27 @@ public class PocaoDeCura extends Item implements Usavel {
     public void usar(Heroi heroi) {
         heroi.receberCura(cura);
         System.out.println("Você usou uma Poção de Cura e recuperou " + cura + " de vida!");
+        System.out.println("Vida atual: " + heroi.getVida() + "/" + heroi.getVidaMaxima());
+    }
+
+    public void mostrarItem() {
+        System.out.println("""
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⣤⣤⣤⣤⣤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠛⠛⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡿⠛⠛⠛⠛⠛⠛⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⢻⡟⠛⠛⢻⡟⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⢀⣤⡶⠾⠛⠛⠛⠿⢾⡇⠀⠀⢸⡷⠿⠛⠛⠛⠷⢶⣤⡀⠀⠀⠀⠀
+                ⠀⠀⠀⣰⠟⠁⠀⠀⠀⣀⣀⣀⣀⡀⠀⠀⢀⣀⣀⣀⣀⠀⠀⠀⠈⠻⣆⠀⠀⠀
+                ⠀⠀⢰⡏⠀⠀⠀⣰⡿⠛⣩⣿⣿⣿⣆⣰⡟⣡⣾⣿⣿⣿⣆⠀⠀⠀⢹⡆⠀⠀
+                ⠀⠀⢸⡇⠀⠀⢰⣿⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⢸⡇⠀⠀
+                ⠀⠀⠘⣧⠀⠀⠸⣿⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⣼⠃⠀⠀
+                ⠀⠀⠀⠹⣧⡀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⢀⣼⠏⠀⠀⠀
+                ⠀⠀⠀⠀⠈⠻⣦⡀⠀⠉⠻⣿⣿⣿⣿⣿⣿⣿⣿⠟⠉⠀⢀⣴⠟⠁⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠈⠻⢷⣄⠀⠈⠙⠿⣿⣿⠿⠋⠁⠀⣠⡾⠟⠁⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⣦⣄⠀⠈⠁⠀⣠⣴⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠷⣦⣴⠾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                """);
     }
 
 }

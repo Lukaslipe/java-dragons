@@ -14,7 +14,7 @@ public class BatalhaController {
         this.batalha = batalha;
     }
 
-    public boolean iniciar() {
+    public String iniciar() {
         view.mostrarMensagem("A batalha começou contra " + batalha.getInimigo().getNome() + "!");
 
         while (!batalha.terminou()) {
@@ -24,21 +24,21 @@ public class BatalhaController {
             int escolha = scanner.nextInt();
             if (!batalha.turnoHeroi(escolha)) {
                 view.mostrarMensagem("Você fugiu da batalha!");
-                return false;
+                return "fugiu";
             }
 
             if (batalha.getInimigo().getVida() <= 0) {
                 view.mostrarMensagem("✅ Você derrotou " + batalha.getInimigo().getNome() + "!");
-                return true;
+                return "vitoria";
             }
 
             batalha.turnoInimigo();
 
             if (batalha.getHeroi().getVida() <= 0) {
                 view.mostrarMensagem("Você foi derrotado...");
-                return false;
+                return "derrota";
             }
         }
-        return false;
+        return "derrota";
     }
 }
