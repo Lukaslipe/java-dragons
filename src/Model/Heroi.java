@@ -53,8 +53,7 @@ public class Heroi extends Personagem {
         this.nivel += 1;
         this.vidaMaxima += 10;
         this.dano += 2;
-        this.vida = vidaMaxima;
-        System.out.println("Você subiu para o nível " + nivel + "! Vida restaurada e mais forte!");
+        System.out.println("Você subiu para o nível " + nivel + "! Vida máxima aumentou e ficou mais forte!");
     }
 
     public void receberDano(int danoRecebido) {

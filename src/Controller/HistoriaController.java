@@ -3,6 +3,7 @@ package Controller;
 import Model.Inimigo;
 import Model.Batalha;
 import Model.Heroi;
+import Model.Curandeiro;
 import Model.PocaoDeCura;
 import Model.PocaoDeForca;
 import Util.Log;
@@ -162,6 +163,18 @@ public class HistoriaController {
             view.mostrarMensagem("O Troll da Ponte cai com um rugido, afundando no rio. Você atravessa a ponte vitorioso!");
             heroi.subirNivel();
             Log.registrar("O herói venceu a batalha contra " + troll.getNome());
+
+            Curandeiro curandeiro = new Curandeiro("Elderon", 100, 1, 30);
+            Log.registrar("O curandeiro: " + curandeiro.getNome() + " foi criado");
+
+            view.mostrarMensagem("Você encontrou o curandeiro " + curandeiro.getNome() + "!");
+
+            curandeiro.curar(heroi);
+            view.mostrarMensagem("O curandeiro te curou em: " + curandeiro.getCura() + " pontos de vida");
+            Log.registrar("O curandeiro " + curandeiro.getNome() + " curou o herói em " + curandeiro.getCura() + " pontos de vida.");
+            view.mostrarMensagem(curandeiro.getNome() + " se despede e segue seu caminho.");
+
+
             capituloTres(heroi);
         } else if (resultado.equals("fugiu")) {
             view.mostrarMensagem("Você tenta correr de volta, mas o Troll quebra a ponte com um golpe!");

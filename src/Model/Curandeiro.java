@@ -17,4 +17,8 @@ public class Curandeiro extends Personagem {
     public void curar(Heroi heroi) {
         heroi.receberCura(cura);
     }
+
+    public int getCura() {
+        return cura;
+    }
 }
