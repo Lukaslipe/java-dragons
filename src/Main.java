@@ -1,6 +1,7 @@
 import Controller.HistoriaController;
 import Model.Heroi;
 import View.HistoriaView;
+import Util.Log;
 
 import java.util.Scanner;
 
@@ -13,6 +14,8 @@ public class Main {
         HistoriaView historiaView = new HistoriaView();
         HistoriaController historiaController = new HistoriaController(historiaView);
 
+        historiaView.mostrarIntroducao();
+        Log.iniciar();
         // --- CRIAÇÃO DO HERÓI ---
         System.out.println("Bem-vindo ao RPG!");
         System.out.print("Digite o nome do seu herói: ");
@@ -47,15 +50,21 @@ public class Main {
 
             heroi = new Heroi(nomeHeroi, vida, nivel, xp, dano, tipoAtaque);
             System.out.println("Herói criado com sucesso! Prepare-se para a aventura, " + nomeHeroi + "!");
+            Log.registrar("O herói " + nomeHeroi + " foi devidamente criado");
         } catch (IllegalArgumentException e) {
             System.out.println("Erro ao criar herói: " + e.getMessage());
+            Log.registrar("Ocorreu um erro ao criar o herói " + e.getMessage());
+            Log.fechar();
         }
 
-        // --- INÍCIO DO JOGO ---
+        // --- INÍCIO DA HISTÓRIA ---
         if (heroi != null) {
+            Log.registrar("A história foi iniciada com o herói: " + heroi.getNome());
             historiaController.iniciar(heroi);
         } else {
-            System.out.println("Não foi possível iniciar o jogo: herói inválido!");
+            System.out.println("Não foi possível iniciar a história: herói inválido!");
+            Log.registrar("Não foi possível iniciar a história");
+            Log.fechar();
         }
         scanner.close();
     }
