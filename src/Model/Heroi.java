@@ -42,7 +42,14 @@ public class Heroi extends Personagem {
     }
 
     public void atacar(Inimigo inimigo) {
-        inimigo.receberDano(dano);
+        double danoFinal = dano;
+
+        // Aumenta o dano caso o tipo de ataque do heroi for arco e o inimigo for do tipo aéreo
+        if ("Arco e Flecha".equalsIgnoreCase(tipoAtaque) && "Aéreo".equalsIgnoreCase(inimigo.getTipo())) {
+            danoFinal *= 1.2;
+        }
+
+        inimigo.receberDano((int) danoFinal);
     }
 
     public void ganharXP(int xp) {

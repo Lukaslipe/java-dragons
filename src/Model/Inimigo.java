@@ -28,4 +28,8 @@ public class Inimigo extends Personagem {
         vida -= dano;
         if (vida < 0) vida = 0;
     }
+
+    public String getTipo() {
+        return tipo;
+    }
 }
