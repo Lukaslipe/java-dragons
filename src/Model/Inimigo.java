@@ -16,6 +16,10 @@ public class Inimigo extends Personagem {
         return vida > 0;
     }
 
+    public int getDano() {
+        return dano;
+    }
+
     public void atacar(Heroi heroi) {
         heroi.receberDano(dano);
     }
