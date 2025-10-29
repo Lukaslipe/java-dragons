@@ -5,6 +5,8 @@ import Model.Inventario;
 import Model.Usavel;
 import View.InventarioView;
 
+import java.util.Map;
+
 public class InventarioController {
     private Inventario inventario;
     private InventarioView view = new InventarioView();
@@ -20,13 +22,24 @@ public class InventarioController {
             int escolha = view.mostrarInventarioEEscolher(inventario);
 
             if (escolha == 0) {
-                continuar = false; // sair do inventário
+                continuar = false;
             } else if (escolha > 0 && escolha <= inventario.getItens().size()) {
-                Usavel item = inventario.getItens().get(escolha - 1);
-                item.usar(heroi);
-                inventario.getItens().remove(escolha - 1);
+                // pega o item pelo índice retornado da view
+                Usavel itemSelecionado = (Usavel) inventario.getItens().keySet().toArray()[escolha - 1];
+
+                // usa o item
+                itemSelecionado.usar(heroi);
+
+                // diminui a quantidade ou remove se for a última
+                Map<Usavel, Integer> mapaItens = inventario.getItens();
+                int qtd = mapaItens.get(itemSelecionado);
+                if (qtd > 1) {
+                    mapaItens.put(itemSelecionado, qtd - 1);
+                } else {
+                    mapaItens.remove(itemSelecionado);
+                }
             } else {
-                System.out.println("Opção inválida!"); // essa ainda poderia ir pra view
+                System.out.println("Opção inválida!");
             }
         }
     }

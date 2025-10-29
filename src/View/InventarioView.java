@@ -2,25 +2,28 @@ package View;
 
 import Model.Inventario;
 import Model.Usavel;
-import Model.Heroi;
-
-import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class InventarioView {
     private Scanner scanner = new Scanner(System.in);
+
     public int mostrarInventarioEEscolher(Inventario inventario) {
-        List<Usavel> itens = inventario.getItens();
+        Map<Usavel, Integer> itens = inventario.getItens();
 
         if (itens.isEmpty()) {
             System.out.println("Seu inventário está vazio!");
-            return 0; // Voltar
+            return 0;
         }
 
         System.out.println("\n===== INVENTÁRIO =====");
-        for (int i = 0; i < itens.size(); i++) {
-            System.out.println((i + 1) + " - " + itens.get(i).getClass().getSimpleName());
+
+        int i = 1;
+        for (Map.Entry<Usavel, Integer> entry : itens.entrySet()) {
+            System.out.println(i + " - " + entry.getKey().getClass().getSimpleName() + " x" + entry.getValue());
+            i++;
         }
+
         System.out.println("0 - Voltar");
         System.out.println("======================");
 
@@ -29,7 +32,6 @@ public class InventarioView {
         return escolha;
     }
 
-    // Mensagem quando o inventário está vazio
     public void inventarioVazio() {
         System.out.println("Seu inventário está vazio!");
     }

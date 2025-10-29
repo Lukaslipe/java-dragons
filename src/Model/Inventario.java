@@ -1,24 +1,16 @@
 package Model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Inventario {
-    private List<Usavel> itens = new ArrayList<>();
+    private Map<Usavel, Integer> itens = new HashMap<>();
 
     public void adicionarItem(Usavel item) {
-        itens.add(item);
+        itens.put(item, itens.getOrDefault(item, 0) + 1);
     }
 
-    public void usarItem(int indice, Heroi heroi) {
-        if (indice >= 0 && indice < itens.size()) {
-            Usavel item = itens.get(indice);
-            item.usar(heroi);
-            itens.remove(indice);
-        }
-    }
-
-    public List<Usavel> getItens() {
+    public Map<Usavel, Integer> getItens() {
         return itens;
     }
 }
