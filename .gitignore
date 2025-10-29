@@ -30,3 +30,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Logs do jogo
+src/Logs/*.txt
+!src/Logs/

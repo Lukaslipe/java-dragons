@@ -2,7 +2,9 @@ package Controller;
 
 import Model.Heroi;
 import Model.Inventario;
+import Model.Item;
 import Model.Usavel;
+import Util.Log;
 import View.InventarioView;
 
 import java.util.Map;
@@ -29,6 +31,7 @@ public class InventarioController {
 
                 // usa o item
                 itemSelecionado.usar(heroi);
+                Log.registrar("O herói usou o item: " + ((Item) itemSelecionado).getNome());
 
                 // diminui a quantidade ou remove se for a última
                 Map<Usavel, Integer> mapaItens = inventario.getItens();
