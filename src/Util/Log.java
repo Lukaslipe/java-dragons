@@ -15,7 +15,7 @@ public class Log {
 
     public static void iniciar() {
         try {
-            String nomeArquivo = "src/Logs/logJogo_" + LocalDateTime.now().format(dataArquivo) + ".txt"; // 👈 salva na pasta Logs
+            String nomeArquivo = "src/logJogo_" + LocalDateTime.now().format(dataArquivo) + ".txt"; // 👈 salva na pasta Logs
             writer = new BufferedWriter(new FileWriter(nomeArquivo, false)); // false = novo arquivo
             registrar("=== Novo jogo iniciado ===");
         } catch (IOException e) {
